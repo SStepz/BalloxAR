@@ -10,6 +10,7 @@ public class BallThrower : MonoBehaviour
 
     // the min distance to count it as a flick
     public float MinSwipDist = 0;
+    private float BallVelocity = 0;
     private float BallSpeed = 0;
     public float MaxBallSpeed = 350;
     private Vector3 angle;
@@ -90,7 +91,7 @@ public class BallThrower : MonoBehaviour
                 // throw ball
                 CalSpeed();
                 CalAngle();
-                rb.AddForce(new Vector3((angle.x * BallSpeed * 3 / 2), (angle.y * BallSpeed), (angle.z * BallSpeed * 2)));
+                rb.AddForce(new Vector3((angle.x * BallSpeed * 2), (angle.y * BallSpeed), (angle.z * BallSpeed * 2)));
                 rb.useGravity = true;
                 holding = false;
                 thrown = true;
@@ -108,7 +109,12 @@ public class BallThrower : MonoBehaviour
 
     void CalSpeed()
     {
-        if(BallSpeed <= MaxBallSpeed)
+        if (swipeTime > 0)
+            BallVelocity = swipeDistance / (swipeDistance - swipeTime);
+
+        BallSpeed = BallVelocity / 10;
+
+        if (BallSpeed <= MaxBallSpeed)
         {
             BallSpeed = MaxBallSpeed;
         }
