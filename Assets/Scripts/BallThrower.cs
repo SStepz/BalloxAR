@@ -62,7 +62,7 @@ public class BallThrower : MonoBehaviour
         if(holding)
             PickupBall();
 
-        if (thrown)
+        if(thrown)
             return;
 
         if(Input.GetMouseButtonDown(0))
