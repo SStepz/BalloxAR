@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BallThrowGen1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/HomeScreen.unity
     guid: b5c812641f64fab4e8f946bb37b553f3
+  - enabled: 1
+    path: Assets/Scenes/StatScreen.unity
+    guid: bab22d09b92bd244bbf1e77e6847d05f
+  - enabled: 1
+    path: Assets/Scenes/BallThrow1.unity
+    guid: 16b4d90a75941f94cbba6024b834267c
+  - enabled: 1
+    path: Assets/Scenes/BallThrow2.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 5a8e3dab0d78d6245bc8df68c57999c5
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 3a9300c33c98fa540a7c5548246fc38f, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 14d1e65db5b261541979ba5058f84687, type: 2}
