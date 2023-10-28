@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
 
 public class StartGame : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         objCamera = GameObject.FindWithTag("MainCamera");
-        SpawnPosition = (objCamera.transform.forward * 0.35f) + objCamera.transform.position;
+        SpawnPosition = (objCamera.transform.forward * 0.35f) + (objCamera.transform.up * -0.2f) + objCamera.transform.position;
         if (!ThrowBall.thrown)
         {
             spawnedBall = Instantiate(BallPrefab, SpawnPosition, Quaternion.identity);

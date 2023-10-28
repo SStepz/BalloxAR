@@ -5,18 +5,8 @@ public class LevelHandler : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI GameLevel;
 
-    private int _level;
-
-    public int Level
+    void Update()
     {
-        get { return _level; }
-        set
-        {
-            _level = value;
-
-            GameLevel.text = Level.ToString();
-
-            PlayerPrefs.SetInt("Level: ", Level);
-        }
+        GameLevel.text = GameStateController.level.ToString();
     }
 }

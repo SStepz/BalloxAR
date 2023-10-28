@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/BallThrow2.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/BallThrow3.unity
+    guid: db9cd73cf1ade7c4891d1073b4c23339
+  - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 5a8e3dab0d78d6245bc8df68c57999c5
+  - enabled: 1
+    path: Assets/Scenes/BabyBallThrow.unity
+    guid: e8e6d12fb265b0744ac75ad598519b33
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 3a9300c33c98fa540a7c5548246fc38f, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 14d1e65db5b261541979ba5058f84687, type: 2}

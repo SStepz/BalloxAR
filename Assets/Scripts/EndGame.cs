@@ -4,11 +4,36 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
+    public float time = 4;
+    private float timeStore = 4;
+
+    void Start()
+    {
+        timeStore = time;
+    }
+
     void Update()
     {
         if (GameStateController.ballnumber == 0)
         {
-            this.Invoke(() => SceneController.SwitchScenes("EndScreen"), 3f);
+            if (time > 0)
+            {
+                time -= Time.deltaTime;
+            }
+            else
+            {
+                if (GameStateController.ballnumber == 0)
+                {
+                    //this.Invoke(() => SceneController.SwitchScenes("EndScreen"), 1f);
+                    SceneController.SwitchScenes("EndScreen");
+                    GameStateController.highscore = GameStateController.score;
+                    GameStateController.maxlevel = GameStateController.level;
+                }
+            }
+        }
+        else
+        {
+            time = timeStore;
         }
     }
 }
