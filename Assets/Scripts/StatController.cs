@@ -8,7 +8,7 @@ public class StatController : MonoBehaviour
 
     void Start()
     {
-        highscore.text = GameStateController.highscore.ToString();
-        maxlevel.text = GameStateController.maxlevel.ToString();
+        highscore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        maxlevel.text = PlayerPrefs.GetInt("MaxLevel", 0).ToString();
     }
 }

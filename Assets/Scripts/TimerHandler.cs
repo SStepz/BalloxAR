@@ -34,8 +34,6 @@ public class TimerHandler : MonoBehaviour
         {
             remainingTime = 0;
             SceneController.SwitchScenes("EndScreen");
-            GameStateController.highscore = GameStateController.score;
-            GameStateController.maxlevel = GameStateController.level;
         }
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         TimerText.text = string.Format("{00}", seconds);

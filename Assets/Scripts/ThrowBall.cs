@@ -13,6 +13,7 @@ public class ThrowBall : MonoBehaviour
     public float MaxBallSpeed = 350;
     private Vector3 angle;
 
+    public static bool holding = false;
     public static bool thrown = false;
     private Vector3 newPosition, resetPos;
     Rigidbody rb;
@@ -33,7 +34,11 @@ public class ThrowBall : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        PickupBall();
+        if (!thrown)
+        {
+            PickupBall();
+            holding = true;
+        }
     }
 
     private void OnMouseUp()
@@ -42,6 +47,7 @@ public class ThrowBall : MonoBehaviour
         endPos = Input.mousePosition;
         swipeDistance = (endPos - startPos).magnitude;
         swipeTime = endTime - startTime;
+        holding = false;
 
         if (swipeTime < 0.5f && swipeDistance > 30f)
         {
@@ -68,6 +74,7 @@ public class ThrowBall : MonoBehaviour
         endTime = 0;
         swipeDistance = 0;
         swipeTime = 0;
+        holding = false;
         thrown = false;
         rb.velocity = Vector3.zero;
         rb.useGravity = false;

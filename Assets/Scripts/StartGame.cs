@@ -6,28 +6,32 @@ public class StartGame : MonoBehaviour
 
     private GameObject spawnedBall;
     private GameObject objCamera;
-    private Vector3 SpawnPosition;
+    private Vector3 TargetPosition;
 
     void Start()
     {
         objCamera = GameObject.FindWithTag("MainCamera");
-        SpawnPosition = (objCamera.transform.forward * 0.35f) + (objCamera.transform.up * -0.2f) + objCamera.transform.position;
+        TargetPosition = (objCamera.transform.forward * 0.35f) + (objCamera.transform.up * -0.2f) + objCamera.transform.position;
         if (!ThrowBall.thrown)
         {
-            spawnedBall = Instantiate(BallPrefab, SpawnPosition, Quaternion.identity);
+            spawnedBall = Instantiate(BallPrefab, TargetPosition, Quaternion.identity);
         }
     }
 
     void Update()
     {
+        TargetPosition = (objCamera.transform.forward * 0.35f) + (objCamera.transform.up * -0.2f) + objCamera.transform.position;
         if (ThrowBall.thrown)
         {
             Destroy(spawnedBall, 3f);
         }
+        else if (spawnedBall != null && !ThrowBall.holding && !ThrowBall.thrown)
+        {
+            spawnedBall.transform.position = TargetPosition;
+        }
         if (GameStateController.ballnumber > 0 && ThrowBall.thrown)
         {
-            SpawnPosition = (objCamera.transform.forward * 0.35f) + (objCamera.transform.up * -0.2f) + objCamera.transform.position;
-            spawnedBall = Instantiate(BallPrefab, SpawnPosition, Quaternion.identity);
+            spawnedBall = Instantiate(BallPrefab, TargetPosition, Quaternion.identity);
         }
     }
 }

@@ -26,8 +26,6 @@ public class EndGame : MonoBehaviour
                 {
                     //this.Invoke(() => SceneController.SwitchScenes("EndScreen"), 1f);
                     SceneController.SwitchScenes("EndScreen");
-                    GameStateController.highscore = GameStateController.score;
-                    GameStateController.maxlevel = GameStateController.level;
                 }
             }
         }

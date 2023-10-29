@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
-    public static int highscore = 0;
-    public static int maxlevel = 0;
     public static int score = 0;
     public static int level = 0;
     public static int ballnumber = 5;
