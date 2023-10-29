@@ -84,7 +84,7 @@ public class ThrowBall : MonoBehaviour
     void PickupBall()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.nearClipPlane * 10f;
+        mousePos.z = Camera.main.nearClipPlane * 4f;
         newPosition = Camera.main.ScreenToWorldPoint(mousePos);
         transform.localPosition = Vector3.Lerp(transform.localPosition, newPosition, 80f * Time.deltaTime);
     }
